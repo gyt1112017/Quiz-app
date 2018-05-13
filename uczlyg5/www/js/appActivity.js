@@ -93,7 +93,29 @@ function calculateDistance(lat1, lon1, lat2, lon2, unit) {
         return dist
 }
 
-
+var xhr; // define the global variable to process the AJAX request
+function callDivChange() {
+xhr = new XMLHttpRequest();
+var filename = document.getElementById("filename").value;
+xhr.open("GET", filename, true);
+xhr.onreadystatechange = processDivChange;
+try {
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+}
+catch (e) {
+// this only works in internet explorer
+}
+xhr.send();
+}
+function processDivChange() {
+if (xhr.readyState < 4) // while waiting response from server
+document.getElementById('button1').innerHTML = "Loading...";
+else if (xhr.readyState === 4) { // 4 = Response from server has been completely loaded.
+if (xhr.status == 200 && xhr.status < 300)
+// http status between 200 to 299 are all successful
+document.getElementById('button1').innerHTML = xhr.responseText;
+}
+}
 
 //   	function showPointLineCircle(){
 				// add a point

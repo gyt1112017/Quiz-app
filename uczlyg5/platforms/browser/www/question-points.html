@@ -134,11 +134,14 @@ var testMarkerBlue = L.AwesomeMarkers.icon({
 });
 // questions 
 // Show Question Points Location
-L.marker([51.522944, -0.128], {icon:testMarkerPink}).addTo(mymap).bindPopup("<b>IOE Library</b>").openPopup();
-L.marker([51.524239, -0.134378], {icon:testMarkerRed}).addTo(mymap).bindPopup("<b>Chadwick Building</b>").openPopup();
-L.marker([51.523409, -0.132747], {icon:testMarkerBlue}).addTo(mymap).bindPopup("<b>Science Library</b>").openPopup();
+L.marker([51.522944, -0.128], {icon:testMarkerPink}).addTo(mymap).bindPopup("<b>IOE Library-Please answer question 2</b>").openPopup();
+L.marker([51.524239, -0.134378], {icon:testMarkerRed}).addTo(mymap).bindPopup("<b>Chadwick Building-Please answer question 1</b>").openPopup();
+L.marker([51.523409, -0.132747], {icon:testMarkerBlue}).addTo(mymap).bindPopup("<b>Science LibraryPlease answer question 3</b>").openPopup();
 
 </script>
+      <div id='showLocation'>Location will be displayed here</div>
+      <button id='trackLocation' onclick='trackLocation()'>Click Me to Get Your Location</button>
+	  <div class="mdl-layout-spacer"></div>
 	  <a id="home" href="index.html">Return to Homepage</a><br/>
 	  </div>
 	  </div>

@@ -17,20 +17,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>This is a location quiz</title>
+    <title>ANSWER THE QUESTION PLEASE</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="img/android-desktop.png">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="img/ios-desktop.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
     <link rel="shortcut icon" href="images/favicon.png">
@@ -44,9 +44,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="ionicons.min.css">
-	<link rel="stylesheet" href="leaflet.awesome-markers.css">
-	<script src="leaflet.awesome-markers.js"></script>
     <style>
     #view-source {
       position: fixed;
@@ -71,12 +68,13 @@
 	
 	<!-- the following CSS is used to set the size of the Map -->
   	<style type="text/css"> 
-		#mapid { height: 280px; }
+		#mapid { height: 180px; }
   	</style>
 	
+    <!-- the following links incorporate the CSS required for custom icon creation -->
+	<script src="./js/leaflet.awesome-markers.js"></script>
 	<link rel="stylesheet" href="./css/ionicons.min.css">
 	<link rel="stylesheet" href="./css/leaflet.awesome-markers.css">
-	<script src="leaflet.awesome-markers.js"></script>
 
 	
 	<!-- ****************************************************** -->
@@ -86,63 +84,81 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Home</span>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item"><a class="user-guide" href="user-guide.html">User Guide</a></li>
-          </ul>
+          <span class="mdl-layout-title">PLEASE ANSWR THE QUESTION BELOW</span>
+		  <div class="mdl-layout-spacer"></div>
         </div>
       </header>
+	  
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="img/user.jpg" class="demo-avatar">
-          <div class="demo-avatar-dropdown">
-            <span>This is user guide for quiz app</span>
-            <div class="mdl-layout-spacer"></div>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <li class="mdl-menu__item">This is user guide for quiz app</li>
-            </ul>
-          </div>
+          <img src="images/user.jpg" class="demo-avatar">
+		  <span>Answer the question</span>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+	
+		<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href="user-guide.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>user-guide</a>
-          <div class="mdl-layout-spacer"></div>
+		  <a class="mdl-navigation__link" href="answer-question.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>show Question points</a>
         </nav>
+    
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
-	  <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" > 
-		<div id="userGuide" style="width: 1600px; height: 900px;">
-		 <h1 style="font-family:arial;"> user guide for quiz app </h1>
-		 <p style="font-family:calibri; font-size:150%;"><b>a guide for helping user to understand the quizapp</b></p>
-		 <ol style="font-family:calibri; font-size:130%;">
-		    <head>Home</head>
-			<p></p>
-			<li> Track the location of the you by turing on the users phone about GPS setting.</li>
-			<li> Click the "Click Me to Get Your Location" button to check the your current location.</li>
-			<li> Click the "The distance from Warden Street to your current location" button to check the distance from Warden Street to your current location.</li>
-			<li> When you clicked on the map, it will show a pop-up, displaying "You clicked the map at lat,lng !".</li>
-			<li> You needs to check which question is the nearest from their current location, and you are able to answer the question by clicking the answer questionn menu and then the user can answer the relevent answer.</li>
-			<p></p>
-			<head>show Question points</head>
-			<p></p>
-			<li> The questions' locations and numbers have been shown on the map <li>
-			<li> Each question point is identified by a location name e.g. IOE</li>
-			<li> you can check their current location by clicking "Click Me to Get Your Location" button, and users need to choose to answer the question which is the nearest.</li>
-			<p></p>
-			<head>answer question</head>
-			<p></p>
-			<li> Users can answer the question by pressing 'answer question' in navigation menu.</li>
-			<li> All the questions will be shown in the page.</li>
-		    <li> When you want to check the correct answer, you need to type Q1.txt or Q2.txt or Q3.txt and click the check the correct answer button.</li>
-			<li> Repeat the above process for each question - until all questions are answered</li>
-		</ol>
-	  <a id="home" href="index.html">Return to Homepage</a><br />
+	  <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" >
+	  
+		<div id="question-points" style="width: 1600px; height: 900px;">
+		 <body>
+      <div>
+        <p>Q1: How many libraries are in the UCL campus? </p>
+	       1: <input type="radio" name="amorpm" id="1"/><br />
+	       2: <input type="radio" name="amorpm" id="2"/><br />
+		   3: <input type="radio" name="amorpm" id="3"/><br />
+		   4: <input type="radio" name="amorpm" id="4"/><br />
+      </div>
+
+	  <div>
+	    <p></p>
+        <p>Q2: Where are you now? </p>
+	       UCL: <input type="radio" name="amorpm" id="UCL" /><br />
+	       IOE: <input type="radio" name="amorpm" id="IOE"/><br />
+		   Brikbeck: <input type="radio" name="amorpm" id="Brikbeck" /><br />
+		   ASOA: <input type="radio" name="amorpm" id="ASOA" /><br />
+      </div>
+	  
+	  <div>
+	    <p></p>
+        <p>Q3: How many floors in this buildings? </p>
+	       4: <input type="radio" name="amorpm" id="4" /><br />
+	       5: <input type="radio" name="amorpm" id="5"/><br />
+		   6: <input type="radio" name="amorpm" id="6" /><br />
+		   7: <input type="radio" name="amorpm" id="7" /><br />
+      </div>
+	  
+      <div >
+	    <p></p>
+        <p> Correct Answer :</p>
+        <p>Type the Q1.txt, Q2.txt, Q3.txt here to check the relevant question's correct answer</p>
+        <input type="text" name="filename" id="filename" size=50>
+        <p></p>
+        > <button id="button1" onclick="callDivChange()">Click me to check the correct answer </button>
+      </div>
+	  
+	  
+	  
+	  
+      <div >
+	      <p></p>
+          <h7>* USER GUIDE *</h7>
+		  <ol style="font-family:calibri; font-size:130%;">
+			<li> Please choose to answer the question which is the nearest </li>
+		  </ol>		  
+      </div>	
+	  <div class="mdl-layout-spacer"></div>
+	  <a id="home" href="index.html">Return to Homepage</a><br/>
 	  </div>
 	  </div>
 	  </main>
 	<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<script src="./js/appActivity.js"></script>
-	<script src="./js/uploadData.js"> </script>
+    <script src="./js/uploadData.js"></script>
+
 	</body>
 </html>
